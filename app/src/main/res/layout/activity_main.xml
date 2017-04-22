@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.matias.lav5tp.MainActivity">
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayoutCompat"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
+
+
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="Registro de usuario"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/subtitulo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Bienvenido a la primer aplicación"
+            android:textColor="#000"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/subtitulo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Buffet-UTN"
+            android:textColor="#000"
+            android:textSize="15dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/imagen"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textMail"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:paddingLeft="25dp"
+                android:text="Mail:"
+                android:textColor="#000"/>
+
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:hint="Email"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textClave"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:paddingLeft="25dp"
+                android:text="Clave:"
+                android:textColor="#000"/>
+
+            <EditText
+                android:layout_width="220dp"
+                android:layout_height="match_parent"
+                android:hint="Clave"
+                android:inputType="textPassword"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnIngresar"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Ingresar"/>
+
+        <TextView
+            android:id="@+id/O"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="O"
+            android:textColor="#000"
+            android:textSize="15dp"/>
+
+        <Button
+            android:id="@+id/btnResgistrarme"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Resgistrarme"/>
+
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
