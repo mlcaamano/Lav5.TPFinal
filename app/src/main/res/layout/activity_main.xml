@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#90B1E1"
     tools:context="com.example.matias.lav5tp.MainActivity">
 
     <LinearLayout
@@ -83,6 +84,7 @@
                 android:textColor="#000"/>
 
             <EditText
+                android:id="@+id/edMail"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
                 android:hint="Email"/>
@@ -103,6 +105,7 @@
                 android:textColor="#000"/>
 
             <EditText
+                android:id="@+id/edClave"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
                 android:hint="Clave"

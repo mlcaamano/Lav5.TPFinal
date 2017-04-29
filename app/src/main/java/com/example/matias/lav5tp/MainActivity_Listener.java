@@ -18,11 +18,12 @@ public class MainActivity_Listener implements View.OnClickListener{
 
 
     public void onClick(View v){
-        Log.d("Click", "se hizo click");
         if(v.getId()==R.id.btnResgistrarme)
         {
-            Log.d("Click", "se hizo click");
-            l.lanzarActivity();
+            l.lanzarActivity(R.id.btnResgistrarme);
+        }
+        else if(v.getId()==R.id.btnIngresar){
+            l.lanzarActivity((R.id.btnIngresar));
         }
     }
 

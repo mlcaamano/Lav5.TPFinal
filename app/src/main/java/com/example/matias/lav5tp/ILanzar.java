@@ -5,5 +5,5 @@ package com.example.matias.lav5tp;
  */
 
 public interface ILanzar {
-    public void lanzarActivity();
+    public void lanzarActivity(int ref);
 }
