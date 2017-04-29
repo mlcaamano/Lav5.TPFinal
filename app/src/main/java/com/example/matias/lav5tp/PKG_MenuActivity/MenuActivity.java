@@ -1,7 +1,9 @@
-package com.example.matias.lav5tp;
+package com.example.matias.lav5tp.PKG_MenuActivity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.matias.lav5tp.R;
 
 public class MenuActivity extends AppCompatActivity {
 

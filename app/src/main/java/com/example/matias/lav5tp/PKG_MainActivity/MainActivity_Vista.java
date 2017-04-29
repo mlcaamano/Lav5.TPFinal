@@ -7,9 +7,9 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.matias.lav5tp.MenuActivity;
+import com.example.matias.lav5tp.PKG_MenuActivity.MenuActivity;
 import com.example.matias.lav5tp.R;
-import com.example.matias.lav5tp.SecondActivity;
+import com.example.matias.lav5tp.PKG_SecondActivity.SecondActivity;
 
 /**
  * Created by matias on 22/04/2017.
