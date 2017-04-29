@@ -1,7 +1,8 @@
-package com.example.matias.lav5tp;
+package com.example.matias.lav5tp.PKG_MainActivity;
 
-import android.util.Log;
 import android.view.View;
+
+import com.example.matias.lav5tp.R;
 
 /**
  * Created by matias on 22/04/2017.
@@ -18,7 +19,7 @@ public class MainActivity_Listener implements View.OnClickListener{
 
 
     public void onClick(View v){
-        if(v.getId()==R.id.btnResgistrarme)
+        if(v.getId()== R.id.btnResgistrarme)
         {
             l.lanzarActivity(R.id.btnResgistrarme);
         }
