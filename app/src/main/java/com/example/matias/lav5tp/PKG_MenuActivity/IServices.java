@@ -6,4 +6,5 @@ package com.example.matias.lav5tp.PKG_MenuActivity;
 
 public interface IServices {
     public void ILanzar(int ref);
+    public void onItemClick(int posicion, String tipoDeLista);
 }

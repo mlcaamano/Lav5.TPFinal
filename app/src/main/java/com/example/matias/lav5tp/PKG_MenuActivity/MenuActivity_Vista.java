@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.MyAdapter;
 import com.example.matias.lav5tp.PKG_PedidoActivity.PedidoActivity;
@@ -32,6 +34,8 @@ public class MenuActivity_Vista implements IServices {
     private Button btnSnacks;
     private TextView txtCantidadPedidos;
     private TextView txtImporteTotal;
+
+    private ImageButton btnImgSumar;
 
     public void setMiControlador(MenuActivity_Controlador cont){
         this.miControlador=cont;
@@ -74,7 +78,7 @@ public class MenuActivity_Vista implements IServices {
         {
             layoutManager= new LinearLayoutManager(actividad);
             rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listBedidas);
+            adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
             rcv.setAdapter(adapter);
             rcv.setLayoutManager(layoutManager);
         }
@@ -82,7 +86,7 @@ public class MenuActivity_Vista implements IServices {
         {
             layoutManager= new LinearLayoutManager(actividad);
             rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listMenus);
+            adapter = new MyAdapter(miModelo.listMenus, this, "Menus");
             rcv.setAdapter(adapter);
             rcv.setLayoutManager(layoutManager);
         }
@@ -90,10 +94,15 @@ public class MenuActivity_Vista implements IServices {
         {
             layoutManager= new LinearLayoutManager(actividad);
             rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listSnacks);
+            adapter = new MyAdapter(miModelo.listSnacks, this, "Snacks");
             rcv.setAdapter(adapter);
             rcv.setLayoutManager(layoutManager);
         }
 
+    }
+
+    @Override
+    public void onItemClick(int posicion, String tipoDeLista) {
+        Toast.makeText(actividad.getApplicationContext(), tipoDeLista, Toast.LENGTH_LONG).show();
     }
 }

@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.matias.lav5tp.PKG_MenuActivity.IServices;
+import com.example.matias.lav5tp.PKG_MenuActivity.MenuActivity_Controlador;
 import com.example.matias.lav5tp.R;
 
 import java.util.List;
@@ -14,17 +16,22 @@ import java.util.List;
  */
 
 public class MyAdapter extends RecyclerView.Adapter<ViewHolder>{
-    private List<Productos> list;
 
-    public MyAdapter(List<Productos>lst){
+    private List<Productos> list;
+    private IServices listener;
+    String tipoDeLista;
+
+    public MyAdapter(List<Productos>lst, IServices listener, String tipo){
         this.list=lst;
+        this.listener=listener;
+        this.tipoDeLista=tipo;
     }
 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_menu, parent, false);
-        ViewHolder holder = new ViewHolder(v);
+        ViewHolder holder = new ViewHolder(v, listener, this.tipoDeLista);
 
         return holder;
     }
@@ -34,6 +41,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder>{
         Productos p= list.get(position);
         holder.setTxtDescripcion(p.getDescripcion());
         holder.setTxtValor(p.getValor().toString());
+        holder.setPosicion(position);
     }
 
     @Override
