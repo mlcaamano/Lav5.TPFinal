@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".PKG_SecondActivity.SecondActivity" />
-        <activity android:name=".PKG_MenuActivity.MenuActivity"></activity>
+        <activity android:name=".PKG_MenuActivity.MenuActivity" />
+        <activity android:name=".PKG_PedidoActivity.PedidoActivity"></activity>
     </application>
 
 </manifest>

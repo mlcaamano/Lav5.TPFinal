@@ -8,8 +8,10 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:layout_editor_absoluteX="8dp">
 
 
         <LinearLayout
@@ -81,7 +83,7 @@
                 android:gravity="center"/>
 
             <TextView
-                android:id="@+id/cantidadPedidos"
+                android:id="@+id/txtCantidadPedidos"
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right|center"
@@ -101,7 +103,7 @@
                 android:id="@+id/btnBebidas"
                 android:layout_width="127dp"
                 android:layout_height="40dp"
-                android:text="Enviar pedido"
+                android:text="Cafe / Bebidas"
                 android:textSize="10dp"
                 android:background="#09F"
                 android:textColor="#FFF"/>
@@ -110,7 +112,7 @@
                 android:id="@+id/btnMenus"
                 android:layout_width="127dp"
                 android:layout_height="40dp"
-                android:text="Enviar pedido"
+                android:text="Menu's"
                 android:textSize="10dp"
                 android:background="#09F"
                 android:textColor="#FFF"/>
@@ -119,12 +121,19 @@
                 android:id="@+id/btnSnacks"
                 android:layout_width="127dp"
                 android:layout_height="40dp"
-                android:text="Enviar pedido"
+                android:text="Snacks"
                 android:textSize="10dp"
                 android:background="#09F"
                 android:textColor="#FFF"/>
 
         </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcvProductos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 
