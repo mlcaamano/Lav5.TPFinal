@@ -51,6 +51,7 @@ public class MenuActivity_Vista implements IServices {
 
     public void setMiControlador(MenuActivity_Controlador cont){
         this.miControlador=cont;
+
         btnBebidas.setOnClickListener(miControlador.getListener());
         btnmenus.setOnClickListener(miControlador.getListener());
         btnSnacks.setOnClickListener(miControlador.getListener());
@@ -70,26 +71,33 @@ public class MenuActivity_Vista implements IServices {
         txtImporteTotal = (TextView) actividad.findViewById(R.id.txtImporteTotal);
         listaPedidos = new ArrayList<Productos>();
 
-
+        cargarListPedido();
     }
 
     public void cargarListPedido(){
 
-        //Pasar a mi pedido
+        SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
 
-//        SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
-//
-//        Gson gson = new Gson();
-//        String json = prefs.getString("lista", "");
-//        Type type = new TypeToken<List<Productos>>(){}.getType();
-//        listaPedidos= gson.fromJson(json, type);
-//
-//        for (Productos p : listaPedidos) {
-//            valorDelPedido= valorDelPedido + Float.valueOf(p.getValor());
-//            cantidadDeItems= cantidadDeItems + Integer.valueOf(1);
-//        }
-//        txtImporteTotal.setText(valorDelPedido.toString());
-//        txtCantidadPedidos.setText(cantidadDeItems.toString());
+        Gson gson = new Gson();
+        String json = prefs.getString("lista", "");
+
+        if(json.isEmpty())
+        {
+
+        }
+        else
+        {
+        Type type = new TypeToken<List<Productos>>(){}.getType();
+        listaPedidos= gson.fromJson(json, type);
+        }
+
+
+        for (Productos p : listaPedidos) {
+            valorDelPedido= valorDelPedido + Float.valueOf(p.getValor());
+            cantidadDeItems= cantidadDeItems + Integer.valueOf(1);
+        }
+        txtImporteTotal.setText(valorDelPedido.toString());
+        txtCantidadPedidos.setText(cantidadDeItems.toString());
     }
 
     public void agregarItemListaDePedido(int posicion, String tipoDeLista){
@@ -113,12 +121,6 @@ public class MenuActivity_Vista implements IServices {
             cantidadDeItems= cantidadDeItems + Integer.valueOf(1);
         }
 
-//        SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = prefs.edit();
-//
-//        String json = new Gson().toJson(listaPedidos);
-//        editor.putString("lista", json);
-//        editor.commit();
 
         txtImporteTotal.setText(valorDelPedido.toString());
         txtCantidadPedidos.setText(cantidadDeItems.toString());
