@@ -28,6 +28,10 @@ public class MenuActivity_Listener implements View.OnClickListener {
         else if (v.getId()== R.id.btnSnacks){
             l.ILanzar(R.id.btnSnacks);
         }
+        else if (v.getId() == R.id.btnEnviarPedido)
+        {
+            l.ILanzar(R.id.btnEnviarPedido);
+        }
 
     }
 }
