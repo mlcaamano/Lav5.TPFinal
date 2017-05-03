@@ -22,7 +22,7 @@
             <TextView
                 android:layout_width="130dp"
                 android:layout_height="50dp"
-                android:text="Pidiendo"
+                android:text="@string/Pidiendo"
                 android:textSize="30dp"
                 android:gravity="center"
                 android:textColor="#000"/>
@@ -35,7 +35,7 @@
                 <TextView
                     android:layout_width="120dp"
                     android:layout_height="25dp"
-                    android:text="Importe"
+                    android:text="@string/Importe"
                     android:textSize="15dp"
                     android:textColor="#000"
                     android:gravity="center"/>
@@ -43,7 +43,7 @@
                 <TextView
                     android:layout_width="120dp"
                     android:layout_height="25dp"
-                    android:text="estimado:"
+                    android:text="@string/estimado"
                     android:textSize="15dp"
                     android:textColor="#000"
                     android:gravity="center"/>
@@ -54,7 +54,7 @@
                 android:id="@+id/txtImporteTotal"
                 android:layout_width="120dp"
                 android:layout_height="50dp"
-                android:text="$ 0.00"
+                android:text="@string/totalAPagar"
                 android:textSize="30dp"
                 android:gravity="center"
                 android:textColor="#000"/>
@@ -70,14 +70,14 @@
                 android:id="@+id/btnEnviarPedido"
                 android:layout_width="120dp"
                 android:layout_height="40dp"
-                android:text="Enviar pedido"
+                android:text="@string/btnEnviarPedido"
                 android:textSize="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:layout_gravity="left|center"
-                android:text="Elementos seleccionados:"
+                android:text="@string/Elementos_seleccionados"
                 android:textSize="15dp"
                 android:textColor="#000"
                 android:gravity="center"/>
@@ -87,7 +87,7 @@
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:layout_gravity="right|center"
-                android:text="000"
+                android:text="@string/txtCantidadPedido"
                 android:textSize="15dp"
                 android:textColor="#000"
                 android:gravity="center"/>
@@ -103,7 +103,7 @@
                 android:id="@+id/btnBebidas"
                 android:layout_width="127dp"
                 android:layout_height="40dp"
-                android:text="Cafe / Bebidas"
+                android:text="@string/btnBebidas"
                 android:textSize="10dp"
                 android:background="#09F"
                 android:textColor="#FFF"/>
@@ -112,7 +112,7 @@
                 android:id="@+id/btnMenus"
                 android:layout_width="127dp"
                 android:layout_height="40dp"
-                android:text="Menu's"
+                android:text="@string/btnMenus"
                 android:textSize="10dp"
                 android:background="#09F"
                 android:textColor="#FFF"/>
@@ -121,7 +121,7 @@
                 android:id="@+id/btnSnacks"
                 android:layout_width="127dp"
                 android:layout_height="40dp"
-                android:text="Snacks"
+                android:text="@string/btnSnacks"
                 android:textSize="10dp"
                 android:background="#09F"
                 android:textColor="#FFF"/>

@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="Registro de usuario"
+        android:text="@string/registro_usuario"
         android:textColor="#000"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -64,14 +64,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="Nombre:"
+                android:text="@string/textNombre"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/editNombre"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Nombre"/>
+                android:hint="@string/textNombre"/>
         </LinearLayout>
 
         <LinearLayout
@@ -85,14 +85,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="Email:"
+                android:text="@string/textApellido"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/editApellido"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Apellido"/>
+                android:hint="@string/textApellido"/>
         </LinearLayout>
 
         <LinearLayout
@@ -106,14 +106,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="DNI:"
+                android:text="@string/textDNI"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/editDNI"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="DNI"/>
+                android:hint="@string/textDNI"/>
         </LinearLayout>
 
         <LinearLayout
@@ -134,14 +134,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="Mail:"
+                android:text="@string/textMail2"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/editMail"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Mail"/>
+                android:hint="@string/textMail2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -155,14 +155,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="Clave:"
+                android:text="@string/textClave2"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/editClave"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Clave"/>
+                android:hint="@string/textClave2"/>
         </LinearLayout>
 
         <LinearLayout
@@ -176,14 +176,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="ReIngrese:"
+                android:text="@string/textReingrese"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/editReingrese"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Repita Clave"/>
+                android:hint="@string/edReingrese"/>
         </LinearLayout>
 
         <Button
@@ -191,7 +191,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Resgistrarme"/>
+            android:text="@string/btnRegistrarme"/>
 
 
 

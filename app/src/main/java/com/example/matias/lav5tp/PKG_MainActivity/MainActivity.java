@@ -19,5 +19,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivity_Controlador miControlador = new MainActivity_Controlador((new MainActivity_Listener(miVista)));
         miVista.setControlador(miControlador);
 
+
+
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
 
-    <item android:id="@+id/confirmarPedido" android:title="Enviar pedido actual"></item>
-    <item android:id="@+id/limpiarPedido" android:title="Limpiar pedido"></item>
-    <item android:id="@+id/cerrarPedido" android:title="Cerrar"></item>
+    <item android:id="@+id/confirmarPedido" android:title="@string/confirmarPedido"></item>
+    <item android:id="@+id/limpiarPedido" android:title="@string/limpiarPedido"></item>
+    <item android:id="@+id/cerrarPedido" android:title="@string/cerrar"></item>
 </menu>

@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">Pedido Buffet</string>
+
+
+    <!--activity_main.xml-->
+
+    <string name="registro_usuario">User Log-In</string>
+    <string name="subtitulo1">Welcome to the first application</string>
+    <string name="subtitulo2">Buffet-UTN</string>
+    <string name="textMail">Mail:</string>
+    <string name="edMail">Test algo@gmail.com</string>
+    <string name="textClave">Password:</string>
+    <string name="edClave">Test 123</string>
+    <string name="btnIngresar">Sing-In</string>
+    <string name="chkReccordar">Remember me</string>
+    <string name="btnRegistrarme">Sing-Up</string>
+
+    <!--activity_main.xml-->
+
+    <string name="Pidiendo">Requesting</string>
+    <string name="Importe">Amount</string>
+    <string name="estimado">estimated:</string>
+    <string name="totalAPagar">$ 0.00</string>
+    <string name="btnEnviarPedido">See cart</string>
+    <string name="Elementos_seleccionados">Selected items:</string>
+    <string name="txtCantidadPedido">000</string>
+    <string name="btnBebidas">Drinks</string>
+    <string name="btnMenus">Menus</string>
+    <string name="btnSnacks">Snacks</string>
+
+
+    <!--activity_pedido.xml-->
+
+    <string name="mi_pedido">My request</string>
+    <string name="btnConfirmarPedido">Send the order</string>
+    <string name="btnVolverMenus">Back to menu</string>
+
+
+    <!--activity_second.xml-->
+
+
+    <string name="pantallaRegistro">This is the registration screen.</string>
+    <string name="datosVerdaderos">Please enter true data</string>
+    <string name="textNombre">First name</string>
+    <string name="textApellido">Last name</string>
+    <string name="textDNI">DNI</string>
+    <string name="textMail2">Mail</string>
+    <string name="textClave2">Password</string>
+    <string name="textReingrese">Reapeat</string>
+    <string name="edReingrese">Reapeat password</string>
+
+    <!--menu_desplegable.xml-->
+
+    <string name="verPedido">See cart</string>
+    <string name="cerrar">Log-Off</string>
+    <string name="confirmarPedido">Send the order</string>
+    <string name="limpiarPedido">Clean orden</string>
+
+
+    <!--toast_messages-->
+
+    <string name="los_campos_deben_estar_completos">Los campos deben estar completos</string>
+
+
+</resources>

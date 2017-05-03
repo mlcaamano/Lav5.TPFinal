@@ -3,6 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
 
 
-    <item android:id="@+id/verPedido" android:title="Ver pedido"></item>
-    <item android:id="@+id/cerrar" android:title="Cerrar"></item>
+    <item android:id="@+id/verPedido" android:title="@string/verPedido"></item>
+    <item android:id="@+id/cerrar" android:title="@string/cerrar"></item>
 </menu>

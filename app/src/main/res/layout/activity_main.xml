@@ -23,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="Registro de usuario"
+            android:text="@string/registro_usuario"
             android:textColor="#000"
             android:textSize="20dp"
             android:textStyle="bold"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Bienvenido a la primer aplicación"
+            android:text="@string/subtitulo1"
             android:textColor="#000"
             android:textSize="15dp"/>
         <TextView
@@ -42,7 +42,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Buffet-UTN"
+            android:text="@string/subtitulo2"
             android:textColor="#000"
             android:textSize="15dp"/>
 
@@ -80,14 +80,14 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="Mail:"
+                android:text="@string/textMail"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/edMail"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Test algo@gmail.com"/>
+                android:hint="@string/edMail"/>
         </LinearLayout>
 
         <LinearLayout
@@ -101,20 +101,20 @@
                 android:layout_height="match_parent"
                 android:gravity="center|left"
                 android:paddingLeft="25dp"
-                android:text="Clave:"
+                android:text="@string/textClave"
                 android:textColor="#000"/>
 
             <EditText
                 android:id="@+id/edClave"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
-                android:hint="Test 123"
+                android:hint="@string/edClave"
                 android:inputType="textPassword"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="15dp"
+            android:layout_height="1dp"
             android:orientation="horizontal">
 
         </LinearLayout>
@@ -124,13 +124,13 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Ingresar"/>
+            android:text="@string/btnIngresar"/>
 
         <CheckBox
             android:id="@+id/chkRecordar"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
-            android:text="Recordarme"
+            android:text="@string/chkReccordar"
             android:layout_gravity="center"
             android:textSize="15dp"/>
 
@@ -139,7 +139,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Resgistrarme"/>
+            android:text="@string/btnRegistrarme"/>
 
 
 

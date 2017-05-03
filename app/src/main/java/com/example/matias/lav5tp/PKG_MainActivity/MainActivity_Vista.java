@@ -48,6 +48,7 @@ public class MainActivity_Vista implements ILanzar {
         if(mail.equals("algo@gmail.com") && clave.equals("123")) {
             i= new Intent(actividad, MenuActivity.class);
             actividad.startActivity(i);
+            actividad.finish();
         }
 
     }
