@@ -72,7 +72,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="@string/btnConfirmarPedido"
-                android:textSize="10dp"/>
+                android:textSize="10dp"
+                android:background="#09F"
+                android:textColor="#FFF"/>
 
             <Button
                 android:id="@+id/btnVolverAlMenu"
@@ -80,7 +82,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:text="@string/btnVolverMenus"
-                android:textSize="10dp"/>
+                android:textSize="10dp"
+                android:background="#09F"
+                android:textColor="#FFF"/>
 
 
         </LinearLayout>

@@ -8,4 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ThemePersonalizada" parent="Theme.AppCompat.DayNight">
+        <item name="colorPrimary">#6c2436</item>
+        <item name="colorPrimaryDark">#6c2436</item>
+        <item name="colorAccent">#6c2436</item>
+    </style>
+
 </resources>

@@ -30,17 +30,17 @@ public class MenuActivity_Modelo {
         listMenus = new ArrayList<Productos>();
         listSnacks = new ArrayList<Productos>();
 
-        listBedidas.add(new Bebidas("1", "Saborizada", Float.valueOf("18")));
-        listBedidas.add(new Bebidas("1", "Gaseosa", Float.valueOf("20")));
-        listBedidas.add(new Bebidas("1", "Agua", Float.valueOf("15")));
+        listBedidas.add(new Bebidas("saborizada", "Saborizada", Float.valueOf("18")));
+        listBedidas.add(new Bebidas("gaseosa", "Gaseosa", Float.valueOf("20")));
+        listBedidas.add(new Bebidas("agua", "Agua", Float.valueOf("15")));
 
-        listMenus.add(new Menus("1", "Milanesa", Float.valueOf("35")));
-        listMenus.add(new Menus("1", "Hamburguesa", Float.valueOf("35")));
-        listMenus.add(new Menus("1", "Pancho", Float.valueOf("15")));
+        listMenus.add(new Menus("milanesa", "Milanesa", Float.valueOf("35")));
+        listMenus.add(new Menus("hamburguesa", "Hamburguesa", Float.valueOf("35")));
+        listMenus.add(new Menus("pancho", "Pancho", Float.valueOf("15")));
 
-        listSnacks.add(new Snacks("1", "Papas Fritas", Float.valueOf("20")));
-        listSnacks.add(new Snacks("1", "Chicitos", Float.valueOf("20")));
-        listSnacks.add(new Snacks("1", "Palito salados", Float.valueOf("20")));
+        listSnacks.add(new Snacks("papas", "Papas Fritas", Float.valueOf("20")));
+        listSnacks.add(new Snacks("chicitos", "Chicitos", Float.valueOf("20")));
+        listSnacks.add(new Snacks("palitos", "Palito salados", Float.valueOf("20")));
 
     }
 

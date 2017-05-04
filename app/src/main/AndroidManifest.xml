@@ -17,8 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".PKG_SecondActivity.SecondActivity" />
-        <activity android:name=".PKG_MenuActivity.MenuActivity" />
-        <activity android:name=".PKG_PedidoActivity.PedidoActivity"></activity>
+        <activity android:name=".PKG_MenuActivity.MenuActivity"
+            android:theme="@style/ThemePersonalizada"/>
+        <activity android:name=".PKG_PedidoActivity.PedidoActivity"
+            android:theme="@style/ThemePersonalizada"></activity>
     </application>
 
 </manifest>
