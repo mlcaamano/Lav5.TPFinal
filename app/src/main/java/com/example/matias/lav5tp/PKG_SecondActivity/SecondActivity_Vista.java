@@ -64,16 +64,12 @@ public class SecondActivity_Vista implements IGuardar {
         }
         else
         {
-            String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-            CharSequence inputStr = mail;
-
-            Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-            Matcher matcher = pattern.matcher(inputStr);
-            if (matcher.matches()) {
-                if(clave.matches(reingrese))
+            if (controlador.validarMail(mail)) {
+                if(controlador.clavesIguales(clave, reingrese))
                 {
                     //Posteriormente aqui desarrollara codigo para verificar que el dni no se repita
                     Toast.makeText(actividad.getApplicationContext(), "Se ha guardado exitosamente", Toast.LENGTH_LONG).show();
+                    actividad.finish();
                 }
                 else
                 {

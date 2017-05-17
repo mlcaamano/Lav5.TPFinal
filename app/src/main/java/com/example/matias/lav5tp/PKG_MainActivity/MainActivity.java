@@ -14,12 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().hide(); //Oculta el menu
 
-        //Modelo miModelo= new Modelo();
-        MainActivity_Vista miVista = new MainActivity_Vista(this);
+        MainActivity_Modelo miModelo= new MainActivity_Modelo();
+        MainActivity_Vista miVista = new MainActivity_Vista(this, miModelo);
         MainActivity_Controlador miControlador = new MainActivity_Controlador((new MainActivity_Listener(miVista)));
         miVista.setControlador(miControlador);
-
-
-
     }
 }

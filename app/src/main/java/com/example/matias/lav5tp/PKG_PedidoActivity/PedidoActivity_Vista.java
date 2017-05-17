@@ -32,8 +32,7 @@ public class PedidoActivity_Vista implements IServices {
     private Button btnConfirmarPedido;
     private Button btnVolverAlMenu;
     private TextView txtTotalPedido;
-
-    RecyclerView.LayoutManager layoutManager;
+    
     RecyclerView rcv;
     MyAdapter adapter;
 
@@ -50,7 +49,6 @@ public class PedidoActivity_Vista implements IServices {
         txtTotalPedido= (TextView) actividad.findViewById(R.id.txtTotalPedido);
         listaPedido= new ArrayList<Productos>();
         cargarListPedido();
-
     }
 
     public  void setMiControlador(PedidoActivity_Controlador cont){
@@ -61,8 +59,9 @@ public class PedidoActivity_Vista implements IServices {
     }
 
     public void cargarRecycleView(){
+        adapter= new MyAdapter(listaPedido, this);
         rcv= (RecyclerView) actividad.findViewById(R.id.rcvProductosPedidos);
-        rcv.setAdapter(new MyAdapter(listaPedido, this));
+        rcv.setAdapter(adapter);
         rcv.setLayoutManager(new LinearLayoutManager(actividad));
     }
 
@@ -72,12 +71,6 @@ public class PedidoActivity_Vista implements IServices {
         String json = new Gson().toJson(listaPedido);
         editor.putString("lista", json);
         editor.commit();
-        recargarPedidoActivity();
-    }
-
-
-    public void recargarPedidoActivity(){
-        actividad.startActivity(actividad.getIntent());
     }
 
     public void  cerrarSesion(){
@@ -86,13 +79,19 @@ public class PedidoActivity_Vista implements IServices {
         editor.putString("mail","");
         editor.putString("clave", "");
         editor.commit();
+        cerrarActivity();
+    }
+
+    public void cerrarActivity(){
+        Intent i = new Intent(actividad, MenuActivity.class);
+        actividad.startActivity(i);
         actividad.finish();
     }
 
     public void limpiarListaPedido(){
         listaPedido.clear();
         salvarLista();
-
+        cerrarActivity();
     }
 
     public void cargarListPedido(){
@@ -103,7 +102,12 @@ public class PedidoActivity_Vista implements IServices {
         String json = prefs.getString("lista", "");
         Type type = new TypeToken<List<Productos>>(){}.getType();
         listaPedido= gson.fromJson(json, type);
+        cargarMontoCantidad();
+    }
 
+    public void cargarMontoCantidad(){
+        valorDelPedido = Float.valueOf("0");
+        cantidadDeItems = 0;
         for (Productos p : listaPedido) {
             valorDelPedido= valorDelPedido + Float.valueOf(p.getValor());
             cantidadDeItems= cantidadDeItems + Integer.valueOf(1);
@@ -115,14 +119,8 @@ public class PedidoActivity_Vista implements IServices {
     public void confirmarPedido(){
         Toast.makeText(actividad.getApplicationContext(), "Se ha confirmado la venta de "+ cantidadDeItems.toString() +" item/s por un total $" + valorDelPedido.toString(), Toast.LENGTH_LONG).show();
         limpiarListaPedido();
-        volverAlMenu();
+        cerrarActivity();
     }
-
-    public void volverAlMenu(){
-        i= new Intent(actividad, MenuActivity.class);
-        actividad.startActivity(i);
-    }
-
 
     @Override
     public void ILanzarPedido(int ref) {
@@ -130,15 +128,15 @@ public class PedidoActivity_Vista implements IServices {
             confirmarPedido();
         }
         if(ref== R.id.btnVolverAlMenu){
-            volverAlMenu();
+            cerrarActivity();
         }
-
     }
 
     @Override
     public void IBorrarItem(int posicion) {
         listaPedido.remove(posicion);
         salvarLista();
-
+        cargarMontoCantidad();
+        adapter.notifyDataSetChanged();
     }
 }

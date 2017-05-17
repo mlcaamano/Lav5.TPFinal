@@ -142,6 +142,7 @@ public class MenuActivity_Vista implements IServices {
             editor.commit();
             i= new Intent(actividad, PedidoActivity.class);
             actividad.startActivity(i);
+            actividad.finish();
         }
     }
 

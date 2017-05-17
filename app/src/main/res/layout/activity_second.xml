@@ -113,6 +113,7 @@
                 android:id="@+id/editDNI"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
+                android:inputType="number"
                 android:hint="@string/textDNI"/>
         </LinearLayout>
 
@@ -162,6 +163,7 @@
                 android:id="@+id/editClave"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
+                android:inputType="textPassword"
                 android:hint="@string/textClave2"/>
         </LinearLayout>
 
@@ -183,6 +185,7 @@
                 android:id="@+id/editReingrese"
                 android:layout_width="220dp"
                 android:layout_height="match_parent"
+                android:inputType="textPassword"
                 android:hint="@string/edReingrese"/>
         </LinearLayout>
 

@@ -16,4 +16,16 @@ public class MainActivity_Controlador {
     public MainActivity_Listener getMiListener(){
         return lanzar_Listener;
     }
+
+    public boolean validarLogIn(String textMail, String textClave, String mail, String clave){
+
+        if(textMail.matches(mail) && textClave.matches(clave)){
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
 }

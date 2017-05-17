@@ -21,6 +21,7 @@ public class MainActivity_Vista implements ILanzar {
     private Button btnIngresar;
     private Button btnRegistrarme;
     private MainActivity_Controlador controlador;
+    private MainActivity_Modelo modelo;
     private CheckBox chkRecordarme;
     private Intent i;
 
@@ -30,9 +31,10 @@ public class MainActivity_Vista implements ILanzar {
         btnIngresar.setOnClickListener(controlador.getMiListener());
     }
 
-    public MainActivity_Vista(MainActivity a)
+    public MainActivity_Vista(MainActivity a, MainActivity_Modelo mod)
     {
         this.actividad=a;
+        this.modelo=mod;
 
         btnIngresar= (Button) actividad.findViewById(R.id.btnIngresar);
         btnRegistrarme= (Button) actividad.findViewById(R.id.btnResgistrarme);
@@ -71,7 +73,7 @@ public class MainActivity_Vista implements ILanzar {
                 Toast mensaje = Toast.makeText(actividad.getApplicationContext(), "Los campos deben estar completos", Toast.LENGTH_LONG);
                 mensaje.show();
             }
-            else if(mailEditText.getText().toString().equals("algo@gmail.com") && claveEditText.getText().toString().equals("123")){
+            else if(controlador.validarLogIn(mailEditText.getText().toString(), claveEditText.getText().toString(), modelo.getMail(), modelo.getClave())){
 
                 if(chkRecordarme.isChecked())
                 {
