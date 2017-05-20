@@ -2,6 +2,8 @@ package com.example.matias.lav5tp.PKG_MenuActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
@@ -9,6 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.matias.lav5tp.PKG_Conexion.HiloCargarImagenes;
+import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.Bebidas;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.MyAdapter;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.Productos;
 import com.example.matias.lav5tp.PKG_PedidoActivity.PedidoActivity;
@@ -24,7 +28,7 @@ import java.util.List;
  * Created by matias on 30/04/2017.
  */
 
-public class MenuActivity_Vista implements IServices {
+public class MenuActivity_Vista implements IServices, Handler.Callback {
 
     private MenuActivity actividad;
     private MenuActivity_Controlador miControlador;
@@ -160,11 +164,9 @@ public class MenuActivity_Vista implements IServices {
     public void ILanzar(int ref) {
         if(ref== R.id.btnBebidas)
         {
-            layoutManager= new LinearLayoutManager(actividad);
-            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
-            rcv.setAdapter(adapter);
-            rcv.setLayoutManager(layoutManager);
+            Handler h = new Handler(this);
+            Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listBedidas, "Bebidas"));
+            miHilo.start();
         }
         else if(ref== R.id.btnMenus)
         {
@@ -193,5 +195,26 @@ public class MenuActivity_Vista implements IServices {
     public void onItemClick(int posicion, String tipoDeLista) {
         //Toast.makeText(actividad.getApplicationContext(), tipoDeLista, Toast.LENGTH_LONG).show();
         agregarItemListaDePedido(posicion, tipoDeLista);
+    }
+
+    @Override
+    public boolean handleMessage(Message msg) {
+        if(msg.arg1==1){
+            layoutManager= new LinearLayoutManager(actividad);
+            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
+            //adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
+            adapter = new MyAdapter((List<Productos>) msg.obj, this, "Bebidas");
+            rcv.setAdapter(adapter);
+            rcv.setLayoutManager(layoutManager);
+        }
+        else if(msg.arg1==2){
+
+        }
+        else if(msg.arg1==3){
+
+        }
+
+
+        return true;
     }
 }

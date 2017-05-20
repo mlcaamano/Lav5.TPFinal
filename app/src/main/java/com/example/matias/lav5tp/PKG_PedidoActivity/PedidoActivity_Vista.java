@@ -32,7 +32,7 @@ public class PedidoActivity_Vista implements IServices {
     private Button btnConfirmarPedido;
     private Button btnVolverAlMenu;
     private TextView txtTotalPedido;
-    
+
     RecyclerView rcv;
     MyAdapter adapter;
 

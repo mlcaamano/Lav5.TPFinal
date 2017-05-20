@@ -1,5 +1,7 @@
 package com.example.matias.lav5tp.PKG_MenuActivity.Entidades;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -48,6 +50,11 @@ public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickL
 
     public void setPosicion(int pos){
         this.posicion=pos;
+    }
+
+    public  void setImagen(byte[] arrayDeBytes){
+        Bitmap bitmap = BitmapFactory.decodeByteArray(arrayDeBytes, 0, arrayDeBytes.length);
+        imagen.setImageBitmap(bitmap);
     }
 
     @Override

@@ -9,6 +9,8 @@ public class Productos {
     private String descripcion;
     private Float valor;
 
+    private  byte[] bitesImagen=null;
+
     protected Productos(String img, String desc, Float val){
         this.imagen= img;
         this.descripcion=desc;
@@ -39,5 +41,12 @@ public class Productos {
         this.valor = valor;
     }
 
+    public void setBitesImagen(byte[] array){
+        this.bitesImagen=array;
+    }
+
+    public byte[] getBitesImagen() {
+        return bitesImagen;
+    }
 
 }
