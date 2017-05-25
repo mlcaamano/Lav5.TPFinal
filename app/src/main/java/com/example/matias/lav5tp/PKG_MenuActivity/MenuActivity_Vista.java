@@ -170,19 +170,15 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
         }
         else if(ref== R.id.btnMenus)
         {
-            layoutManager= new LinearLayoutManager(actividad);
-            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listMenus, this, "Menus");
-            rcv.setAdapter(adapter);
-            rcv.setLayoutManager(layoutManager);
+            Handler h = new Handler(this);
+            Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listMenus, "Menus"));
+            miHilo.start();
         }
         else if(ref== R.id.btnSnacks)
         {
-            layoutManager= new LinearLayoutManager(actividad);
-            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listSnacks, this, "Snacks");
-            rcv.setAdapter(adapter);
-            rcv.setLayoutManager(layoutManager);
+            Handler h = new Handler(this);
+            Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listSnacks, "Snacks"));
+            miHilo.start();
         }
         else if (ref== R.id.btnEnviarPedido)
         {
@@ -193,25 +189,40 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
 
     @Override
     public void onItemClick(int posicion, String tipoDeLista) {
-        //Toast.makeText(actividad.getApplicationContext(), tipoDeLista, Toast.LENGTH_LONG).show();
         agregarItemListaDePedido(posicion, tipoDeLista);
     }
 
     @Override
     public boolean handleMessage(Message msg) {
         if(msg.arg1==1){
+
+            miModelo.listBedidas=(List<Productos>) msg.obj;
+
             layoutManager= new LinearLayoutManager(actividad);
             rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            //adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
-            adapter = new MyAdapter((List<Productos>) msg.obj, this, "Bebidas");
+            adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
             rcv.setAdapter(adapter);
             rcv.setLayoutManager(layoutManager);
         }
         else if(msg.arg1==2){
 
+            miModelo.listMenus= (List<Productos>) msg.obj;
+
+            layoutManager= new LinearLayoutManager(actividad);
+            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
+            adapter = new MyAdapter(miModelo.listMenus, this, "Menus");
+            rcv.setAdapter(adapter);
+            rcv.setLayoutManager(layoutManager);
         }
         else if(msg.arg1==3){
 
+            miModelo.listSnacks = (List<Productos>) msg.obj;
+
+            layoutManager= new LinearLayoutManager(actividad);
+            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
+            adapter = new MyAdapter(miModelo.listSnacks, this, "Snacks");
+            rcv.setAdapter(adapter);
+            rcv.setLayoutManager(layoutManager);
         }
 
 

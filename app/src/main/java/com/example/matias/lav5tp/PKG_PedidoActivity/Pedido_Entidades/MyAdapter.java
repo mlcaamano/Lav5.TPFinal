@@ -40,6 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<ViewHolder>{
         holder.setTxtDescripcion(p.getDescripcion());
         holder.setTxtValor(p.getValor().toString());
         holder.setPosicion(position);
+        holder.setImagen(p.getBitesImagen());
     }
 
     @Override
