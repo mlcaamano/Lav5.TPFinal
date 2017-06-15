@@ -29,7 +29,7 @@ public class HiloLoguearUsuario implements Runnable {
         miConexion= ConexionInternet.getConexionInternet();
         miMensaje= new Message();
         try{
-            String s = new String(miConexion.getBytesDataByGet("http://192.168.0.9:3000/usuarios/" + mail + "/" + clave));
+            String s = new String(miConexion.getBytesDataByGet(ConexionInternet.obtenerIP()+"/usuarios/" + mail + "/" + clave));
             Log.d("Estado", s);
             if(s.contains("Validado")){
                 miMensaje.arg1= 200;

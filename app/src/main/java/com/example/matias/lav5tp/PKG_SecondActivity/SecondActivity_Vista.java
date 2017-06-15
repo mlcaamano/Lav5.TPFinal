@@ -58,30 +58,15 @@ public class SecondActivity_Vista implements IGuardar {
         String clave=editClave.getText().toString();
         String reingrese=editReingrese.getText().toString();
 
+
+
         if(nombre.matches("") || apellido.matches("") || dni.matches("") || mail.matches("") || clave.matches("") || reingrese.matches(""))
         {
             Toast.makeText(actividad.getApplicationContext(), "Los campos no deben estar vacios", Toast.LENGTH_LONG).show();
         }
         else
         {
-            if (controlador.validarMail(mail)) {
-                if(controlador.clavesIguales(clave, reingrese))
-                {
-                    //Posteriormente aqui desarrollara codigo para verificar que el dni no se repita
-                    Toast.makeText(actividad.getApplicationContext(), "Se ha guardado exitosamente", Toast.LENGTH_LONG).show();
-                    actividad.finish();
-                }
-                else
-                {
-                    Toast.makeText(actividad.getApplicationContext(), "Las claves no coinciden", Toast.LENGTH_LONG).show();
-                }
-            }
-            else
-            {
-                Toast.makeText(actividad.getApplicationContext(), "El tipo de mail no es valido", Toast.LENGTH_LONG).show();
-            }
+            controlador.validarUsuario(nombre, apellido, dni, mail, clave, reingrese, actividad);
         }
-
-
     }
 }
