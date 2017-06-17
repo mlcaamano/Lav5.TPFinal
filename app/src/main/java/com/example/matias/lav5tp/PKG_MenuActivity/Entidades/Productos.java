@@ -5,16 +5,33 @@ package com.example.matias.lav5tp.PKG_MenuActivity.Entidades;
  */
 
 public class Productos {
+    private String tipoProducto;
     private String imagen;
     private String descripcion;
     private Float valor;
-
     private  byte[] bitesImagen=null;
 
-    protected Productos(String img, String desc, Float val){
+    public Productos(String img, String desc, Float val, String tipo){
         this.imagen= img;
         this.descripcion=desc;
         this.valor=val;
+        this.tipoProducto=tipo;
+    }
+
+    public Productos(String img, String desc, Float val){
+        this.imagen= img;
+        this.descripcion=desc;
+        this.valor=val;
+    }
+
+
+
+    public String getTipoProducto() {
+        return tipoProducto;
+    }
+
+    public void setTipoProducto(String tipoProducto) {
+        this.tipoProducto = tipoProducto;
     }
 
     public String getImagen(){

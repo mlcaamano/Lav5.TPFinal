@@ -5,9 +5,7 @@ import android.os.Message;
 import android.widget.Toast;
 
 import com.example.matias.lav5tp.PKG_Conexion.HiloCargarUsuario;
-import com.example.matias.lav5tp.PKG_Conexion.HiloLoguearUsuario;
 import com.example.matias.lav5tp.PKG_Conexion.HiloTraerUsuarios;
-import com.example.matias.lav5tp.PKG_MainActivity.MainActivity_Listener;
 import com.example.matias.lav5tp.PKG_SecondActivity.Entidades.Usuario;
 
 import java.util.List;

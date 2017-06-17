@@ -114,7 +114,7 @@ public class ConexionInternet {
 
 
     public static String obtenerIP(){
-        return "http://172.20.203.91:3000";
+        return "http://192.168.0.10:3000";
     }
 
 }

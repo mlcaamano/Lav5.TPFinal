@@ -55,7 +55,7 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
 
     public void setMiControlador(MenuActivity_Controlador cont){
         this.miControlador=cont;
-
+        miControlador.traerProductos();
         btnBebidas.setOnClickListener(miControlador.getListener());
         btnmenus.setOnClickListener(miControlador.getListener());
         btnSnacks.setOnClickListener(miControlador.getListener());

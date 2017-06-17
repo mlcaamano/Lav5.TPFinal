@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
 
         miModelo = new MenuActivity_Modelo();
         miVista = new MenuActivity_Vista(this, miModelo);
-        miControlador= new MenuActivity_Controlador(new MenuActivity_Listener(miVista));
+        miControlador= new MenuActivity_Controlador(new MenuActivity_Listener(miVista), miModelo, this);
         miVista.setMiControlador(miControlador);
 
     }
