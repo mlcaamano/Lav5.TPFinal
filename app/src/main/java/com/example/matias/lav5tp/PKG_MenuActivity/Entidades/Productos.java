@@ -18,14 +18,6 @@ public class Productos {
         this.tipoProducto=tipo;
     }
 
-    public Productos(String img, String desc, Float val){
-        this.imagen= img;
-        this.descripcion=desc;
-        this.valor=val;
-    }
-
-
-
     public String getTipoProducto() {
         return tipoProducto;
     }

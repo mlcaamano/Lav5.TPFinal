@@ -124,8 +124,7 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
             valorDelPedido= valorDelPedido + Float.valueOf(miModelo.listSnacks.get(posicion).getValor());
             cantidadDeItems= cantidadDeItems + Integer.valueOf(1);
         }
-
-
+        
         txtImporteTotal.setText(valorDelPedido.toString());
         txtCantidadPedidos.setText(cantidadDeItems.toString());
 

@@ -37,7 +37,6 @@ public class MenuActivity_Controlador implements Handler.Callback {
 
     public void traerProductos(){
 
-        Toast.makeText(actividad, "Trayendo Productos", Toast.LENGTH_SHORT).show();
         Handler h = new Handler(this);
         HiloTraerProductos miHilo = new HiloTraerProductos(h);
         Thread hilo1 = new Thread(miHilo);
@@ -54,26 +53,20 @@ public class MenuActivity_Controlador implements Handler.Callback {
         List<Productos> listSnacks = new ArrayList<>();
 
         if(msg.arg1==200){
-
-            Toast.makeText(actividad,"Productos traidos", Toast.LENGTH_SHORT).show();
             for (Productos p: listProductos) {
                 if(p.getTipoProducto().equals("Bebida")){
-                    listBebidas.add(new Bebidas(p.getImagen(), p.getDescripcion(), p.getValor()));
+                    listBebidas.add(new Bebidas(p.getImagen(), p.getDescripcion(), p.getValor(), p.getTipoProducto()));
                 }
                 if(p.getTipoProducto().equals("Principal")){
-                    listMenus.add(new Menus(p.getImagen(), p.getDescripcion(), p.getValor()));
+                    listMenus.add(new Menus(p.getImagen(), p.getDescripcion(), p.getValor(), p.getTipoProducto()));
                 }
                 if(p.getTipoProducto().equals("Snack")){
-                    listSnacks.add(new Snacks(p.getImagen(), p.getDescripcion(), p.getValor()));
+                    listSnacks.add(new Snacks(p.getImagen(), p.getDescripcion(), p.getValor(), p.getTipoProducto()));
                 }
             }
             miModelo.setListBedidas(listBebidas);
             miModelo.setListMenus(listMenus);
             miModelo.setListSnacks(listSnacks);
-
-            for (Productos b: listBebidas) {
-                Toast.makeText(actividad, b.getDescripcion(), Toast.LENGTH_SHORT).show();
-            }
         }
         if (msg.arg1==404)
         {

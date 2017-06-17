@@ -6,8 +6,8 @@ package com.example.matias.lav5tp.PKG_MenuActivity.Entidades;
 
 public class Snacks extends Productos {
 
-    public Snacks(String imagen, String desc, Float valor)
+    public Snacks(String imagen, String desc, Float valor, String tipo)
     {
-        super(imagen, desc, valor);
+        super(imagen, desc, valor, tipo);
     }
 }

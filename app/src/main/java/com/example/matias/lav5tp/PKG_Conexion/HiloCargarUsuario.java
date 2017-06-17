@@ -31,11 +31,7 @@ public class HiloCargarUsuario implements Runnable {
 
         try{
 
-
-            //String obj = "{'nombre':"+nuevoUsuario.getNombre()+"'apellido':"+nuevoUsuario.getApellido()+"'dni':"+nuevoUsuario.getDni()+"'mail':"+nuevoUsuario.getMail()+"'clave':"+nuevoUsuario.getClave()+"}"
-
             JSONObject obj = new JSONObject();
-            //obj.put("usuarios", nuevoUsuario);
 
             obj.put("nombre", nuevoUsuario.getNombre().toString());
             obj.put("apellido", nuevoUsuario.getApellido().toString());

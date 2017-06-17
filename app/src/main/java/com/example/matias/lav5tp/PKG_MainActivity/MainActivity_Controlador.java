@@ -7,6 +7,7 @@ import android.os.Message;
 import android.widget.Toast;
 
 import com.example.matias.lav5tp.PKG_Conexion.HiloLoguearUsuario;
+import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.UsuarioLogueado;
 import com.example.matias.lav5tp.PKG_MenuActivity.MenuActivity;
 
 /**
@@ -54,6 +55,8 @@ public class MainActivity_Controlador implements Handler.Callback{
                 editor.putString("clave", clave.toString());
                 editor.commit();
             }
+
+            UsuarioLogueado.getUsuarioActivo().setUsuarioActivo(mail.toString());
 
             Intent i= new Intent(actividad, MenuActivity.class);
             actividad.startActivity(i);

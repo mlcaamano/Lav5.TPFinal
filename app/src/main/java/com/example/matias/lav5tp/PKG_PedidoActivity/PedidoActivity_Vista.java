@@ -2,13 +2,17 @@ package com.example.matias.lav5tp.PKG_PedidoActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.matias.lav5tp.PKG_Conexion.HiloRegistrarPedidos;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.Productos;
+import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.UsuarioLogueado;
 import com.example.matias.lav5tp.PKG_MenuActivity.MenuActivity;
 import com.example.matias.lav5tp.PKG_PedidoActivity.Pedido_Entidades.MyAdapter;
 import com.example.matias.lav5tp.R;
@@ -23,7 +27,7 @@ import java.util.List;
  * Created by matias on 01/05/2017.
  */
 
-public class PedidoActivity_Vista implements IServices {
+public class PedidoActivity_Vista implements IServices, Handler.Callback {
 
     private PedidoActivity actividad;
     private PedidoActivity_Controlador miControlador;
@@ -117,9 +121,10 @@ public class PedidoActivity_Vista implements IServices {
     }
 
     public void confirmarPedido(){
-        Toast.makeText(actividad.getApplicationContext(), "Se ha confirmado la venta de "+ cantidadDeItems.toString() +" item/s por un total $" + valorDelPedido.toString(), Toast.LENGTH_LONG).show();
-        limpiarListaPedido();
-        cerrarActivity();
+        Handler h = new Handler(this);
+        HiloRegistrarPedidos hilo1 = new HiloRegistrarPedidos(h, UsuarioLogueado.getUsuarioActivo().getMail().toString(), listaPedido);
+        Thread miHilo = new Thread(hilo1);
+        miHilo.start();
     }
 
     @Override
@@ -138,5 +143,18 @@ public class PedidoActivity_Vista implements IServices {
         salvarLista();
         cargarMontoCantidad();
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean handleMessage(Message msg) {
+        if(msg.arg1==200){
+            Toast.makeText(actividad.getApplicationContext(), "Se ha confirmado la venta de "+ cantidadDeItems.toString() +" item/s por un total $" + valorDelPedido.toString(), Toast.LENGTH_LONG).show();
+            limpiarListaPedido();
+            cerrarActivity();
+        }
+        if(msg.arg2==404){
+            Toast.makeText(actividad.getApplicationContext(), "Error al conectar", Toast.LENGTH_LONG).show();
+        }
+        return true;
     }
 }
