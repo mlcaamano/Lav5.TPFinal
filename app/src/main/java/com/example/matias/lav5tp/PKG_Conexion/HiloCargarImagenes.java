@@ -43,14 +43,11 @@ public class HiloCargarImagenes implements Runnable {
 
     public void cargarEnListaImagen(){
         for (Productos producto: lista) {
-            if(producto.getBitesImagen()==null)
-            {
-                try{
-                    producto.setBitesImagen((byte[]) miConexion.getBytesDataByGet(producto.getImagen()));
-                }
-                catch (Exception e){
-
-                }
+            try{
+                producto.setBitesImagen((byte[]) miConexion.getBytesDataByGet(producto.getImagen()));
+            }
+            catch (Exception e){
+                e.printStackTrace();
             }
         }
 

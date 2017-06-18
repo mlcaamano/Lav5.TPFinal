@@ -124,7 +124,7 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
             valorDelPedido= valorDelPedido + Float.valueOf(miModelo.listSnacks.get(posicion).getValor());
             cantidadDeItems= cantidadDeItems + Integer.valueOf(1);
         }
-        
+
         txtImporteTotal.setText(valorDelPedido.toString());
         txtCantidadPedidos.setText(cantidadDeItems.toString());
 
@@ -163,27 +163,63 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
     public void ILanzar(int ref) {
         if(ref== R.id.btnBebidas)
         {
-            Handler h = new Handler(this);
-            Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listBedidas, "Bebidas"));
-            miHilo.start();
+            cargarRcvBebidas();
+            if(miModelo.listBedidas.get(0).getBitesImagen()==null){
+                Handler h = new Handler(this);
+                Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listBedidas, "Bebidas"));
+                miHilo.start();
+            }
+
         }
         else if(ref== R.id.btnMenus)
         {
-            Handler h = new Handler(this);
-            Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listMenus, "Menus"));
-            miHilo.start();
+            cargarRcvMenus();
+
+            if(miModelo.listMenus.get(0).getBitesImagen()==null) {
+                Handler h = new Handler(this);
+                Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listMenus, "Menus"));
+                miHilo.start();
+            }
         }
         else if(ref== R.id.btnSnacks)
         {
-            Handler h = new Handler(this);
-            Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listSnacks, "Snacks"));
-            miHilo.start();
+            cargarRcvSnacks();
+
+            if(miModelo.listSnacks.get(0).getBitesImagen()==null) {
+                Handler h = new Handler(this);
+                Thread miHilo = new Thread(new HiloCargarImagenes(h, miModelo.listSnacks, "Snacks"));
+                miHilo.start();
+            }
         }
         else if (ref== R.id.btnEnviarPedido)
         {
             lanzarPedido();
         }
 
+    }
+
+    public void cargarRcvBebidas(){
+        layoutManager= new LinearLayoutManager(actividad);
+        rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
+        adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
+        rcv.setAdapter(adapter);
+        rcv.setLayoutManager(layoutManager);
+    }
+
+    public void cargarRcvMenus(){
+        layoutManager= new LinearLayoutManager(actividad);
+        rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
+        adapter = new MyAdapter(miModelo.listMenus, this, "Menus");
+        rcv.setAdapter(adapter);
+        rcv.setLayoutManager(layoutManager);
+    }
+
+    public void cargarRcvSnacks(){
+        layoutManager= new LinearLayoutManager(actividad);
+        rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
+        adapter = new MyAdapter(miModelo.listSnacks, this, "Snacks");
+        rcv.setAdapter(adapter);
+        rcv.setLayoutManager(layoutManager);
     }
 
     @Override
@@ -194,34 +230,16 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
     @Override
     public boolean handleMessage(Message msg) {
         if(msg.arg1==1){
-
-            miModelo.listBedidas=(List<Productos>) msg.obj;
-
-            layoutManager= new LinearLayoutManager(actividad);
-            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listBedidas, this, "Bebidas");
-            rcv.setAdapter(adapter);
-            rcv.setLayoutManager(layoutManager);
+            miModelo.listBedidas = (List<Productos>) msg.obj;
+            cargarRcvBebidas();
         }
         else if(msg.arg1==2){
-
-            miModelo.listMenus= (List<Productos>) msg.obj;
-
-            layoutManager= new LinearLayoutManager(actividad);
-            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listMenus, this, "Menus");
-            rcv.setAdapter(adapter);
-            rcv.setLayoutManager(layoutManager);
+            miModelo.listMenus = (List<Productos>) msg.obj;
+            cargarRcvMenus();
         }
         else if(msg.arg1==3){
-
             miModelo.listSnacks = (List<Productos>) msg.obj;
-
-            layoutManager= new LinearLayoutManager(actividad);
-            rcv = (RecyclerView) actividad.findViewById(R.id.rcvProductos);
-            adapter = new MyAdapter(miModelo.listSnacks, this, "Snacks");
-            rcv.setAdapter(adapter);
-            rcv.setLayoutManager(layoutManager);
+            cargarRcvSnacks();
         }
 
 
