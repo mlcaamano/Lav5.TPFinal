@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.matias.lav5tp.PKG_Conexion.HiloRegistrarPedidos;
+import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.ListaPedido;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.Productos;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.UsuarioLogueado;
 import com.example.matias.lav5tp.PKG_MenuActivity.MenuActivity;
@@ -69,15 +70,7 @@ public class PedidoActivity_Vista implements IServices, Handler.Callback {
         rcv.setLayoutManager(new LinearLayoutManager(actividad));
     }
 
-    public void salvarLista(){
-        SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        String json = new Gson().toJson(listaPedido);
-        editor.putString("lista", json);
-        editor.commit();
-    }
-
-    public void  cerrarSesion(){
+    public void cerrarSesion(){
         SharedPreferences pref = actividad.getSharedPreferences("ArchivoDatos", actividad.MODE_PRIVATE);
         SharedPreferences.Editor editor=pref.edit();
         editor.putString("mail","");
@@ -92,20 +85,8 @@ public class PedidoActivity_Vista implements IServices, Handler.Callback {
         actividad.finish();
     }
 
-    public void limpiarListaPedido(){
-        listaPedido.clear();
-        salvarLista();
-        cerrarActivity();
-    }
-
     public void cargarListPedido(){
-
-        SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
-
-        Gson gson = new Gson();
-        String json = prefs.getString("lista", "");
-        Type type = new TypeToken<List<Productos>>(){}.getType();
-        listaPedido= gson.fromJson(json, type);
+        listaPedido= ListaPedido.getListPedidos();
         cargarMontoCantidad();
     }
 
@@ -140,7 +121,6 @@ public class PedidoActivity_Vista implements IServices, Handler.Callback {
     @Override
     public void IBorrarItem(int posicion) {
         listaPedido.remove(posicion);
-        salvarLista();
         cargarMontoCantidad();
         adapter.notifyDataSetChanged();
     }
@@ -149,7 +129,7 @@ public class PedidoActivity_Vista implements IServices, Handler.Callback {
     public boolean handleMessage(Message msg) {
         if(msg.arg1==200){
             Toast.makeText(actividad.getApplicationContext(), "Se ha confirmado la venta de "+ cantidadDeItems.toString() +" item/s por un total $" + valorDelPedido.toString(), Toast.LENGTH_LONG).show();
-            limpiarListaPedido();
+            ListaPedido.vaciarLista();
             cerrarActivity();
         }
         if(msg.arg2==404){

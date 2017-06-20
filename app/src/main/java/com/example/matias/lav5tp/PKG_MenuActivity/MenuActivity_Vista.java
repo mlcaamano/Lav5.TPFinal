@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.matias.lav5tp.PKG_Conexion.HiloCargarImagenes;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.Bebidas;
+import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.ListaPedido;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.MyAdapter;
 import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.Productos;
 import com.example.matias.lav5tp.PKG_PedidoActivity.PedidoActivity;
@@ -79,22 +80,7 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
     }
 
     public void cargarListPedido(){
-
-        SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
-
-        Gson gson = new Gson();
-        String json = prefs.getString("lista", "");
-
-        if(json.isEmpty())
-        {
-
-        }
-        else
-        {
-        Type type = new TypeToken<List<Productos>>(){}.getType();
-        listaPedidos= gson.fromJson(json, type);
-        }
-
+        listaPedidos = ListaPedido.getListPedidos();
 
         for (Productos p : listaPedidos) {
             valorDelPedido= valorDelPedido + Float.valueOf(p.getValor());
@@ -137,12 +123,7 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
             Toast.makeText(actividad.getApplicationContext(), "Debe agregar item a para ponerlos en el pedido", Toast.LENGTH_SHORT).show();
         }
         else{
-            SharedPreferences prefs = actividad.getSharedPreferences("ArchivoList", actividad.MODE_PRIVATE);
-            SharedPreferences.Editor editor = prefs.edit();
-
-            String json = new Gson().toJson(listaPedidos);
-            editor.putString("lista", json);
-            editor.commit();
+            ListaPedido.guardarLista(listaPedidos);
             i= new Intent(actividad, PedidoActivity.class);
             actividad.startActivity(i);
             actividad.finish();
@@ -241,8 +222,6 @@ public class MenuActivity_Vista implements IServices, Handler.Callback {
             miModelo.listSnacks = (List<Productos>) msg.obj;
             cargarRcvSnacks();
         }
-
-
         return true;
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.matias.lav5tp.PKG_MenuActivity.Entidades.ListaPedido;
 import com.example.matias.lav5tp.R;
 
 public class PedidoActivity extends AppCompatActivity {
@@ -38,7 +39,8 @@ public class PedidoActivity extends AppCompatActivity {
             miVista.cerrarSesion();
         }
         if(item.getItemId() == R.id.limpiarPedido){
-            miVista.limpiarListaPedido();
+            ListaPedido.vaciarLista();
+            miVista.cerrarActivity();
         }
         if(item.getItemId()==R.id.confirmarPedido){
             miVista.confirmarPedido();

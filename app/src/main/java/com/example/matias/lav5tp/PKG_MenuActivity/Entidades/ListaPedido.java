@@ -16,22 +16,18 @@ public class ListaPedido {
     private ListaPedido() {
     }
 
-    public static List<Productos> getListPedidos(PedidoActivity actividad){
+    public static List<Productos> getListPedidos(){
         if(listPedidos==null){
             listPedidos= new ArrayList<Productos>();
         }
         return listPedidos;
     }
 
-    public void agregarProducto(Productos p){
-        listPedidos.add(p);
+    public static void guardarLista(List<Productos> list){
+        listPedidos=list;
     }
 
-    public void borrarProducto(int posicion){
-        listPedidos.remove(posicion);
-    }
-
-    public void vaciarLista(){
+    public static void vaciarLista(){
         listPedidos.clear();
     }
 
