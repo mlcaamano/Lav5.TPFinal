@@ -20,7 +20,7 @@ public class SecondActivity_Listener implements View.OnClickListener {
 
 
     public void onClick(View v){
-        if(v.getId()== R.id.btnGuardar)
+        if(v.getId()== R.id.btnGuardar2)
         {
             l.guadarUsuario();
         }

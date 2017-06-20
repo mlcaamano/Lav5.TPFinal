@@ -1,6 +1,7 @@
 package com.example.matias.lav5tp.PKG_SecondActivity;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,7 +19,6 @@ import java.util.regex.Pattern;
 public class SecondActivity_Vista implements IGuardar {
 
     private SecondActivity actividad;
-    private Button btnIngresar;
     private SecondActivity_Controlador controlador;
     private Intent i;
     private EditText editNombre;
@@ -27,24 +27,23 @@ public class SecondActivity_Vista implements IGuardar {
     private EditText editMail;
     private EditText editClave;
     private EditText editReingrese;
+    private FloatingActionButton fabGuardar;
 
     public void setControlador(SecondActivity_Controlador cont){
         this.controlador= cont;
-        btnIngresar.setOnClickListener(controlador.getMiListener());
-        btnIngresar.setOnClickListener(controlador.getMiListener());
+        fabGuardar.setOnClickListener(controlador.getMiListener());
     }
 
     public SecondActivity_Vista(SecondActivity a)
     {
         this.actividad=a;
-
-        btnIngresar= (Button) actividad.findViewById(R.id.btnGuardar);
         editNombre=(EditText) actividad.findViewById(R.id.editNombre);
         editApellido=(EditText) actividad.findViewById(R.id.editApellido);
         editDNI=(EditText) actividad.findViewById(R.id.editDNI);
         editMail=(EditText) actividad.findViewById(R.id.editMail);
         editClave=(EditText) actividad.findViewById(R.id.editClave);
         editReingrese=(EditText) actividad.findViewById(R.id.editReingrese);
+        fabGuardar = (FloatingActionButton) actividad.findViewById(R.id.btnGuardar2);
     }
 
 

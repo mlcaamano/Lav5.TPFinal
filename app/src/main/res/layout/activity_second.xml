@@ -1,203 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+
+<android.support.design.widget.CoordinatorLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#09F"
-    tools:context="com.example.matias.lav5tp.PKG_SecondActivity.SecondActivity">
-
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:orientation="vertical"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayoutCompat"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <TextView
-        android:id="@+id/titulo"
+
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="@string/registro_usuario"
-        android:textColor="#000"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        />
-
-    <TextView
-        android:id="@+id/subtitulo1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Está es la pantalla de registro."
-        android:textColor="#000"
-        android:textSize="15dp"/>
-    <TextView
-        android:id="@+id/subtitulo2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Por favor ingrese datos verdaderos"
-        android:textColor="#000"
-        android:textSize="15dp"/>
+        android:layout_height="match_parent"
+        android:background="#09F"
+        tools:context="com.example.matias.lav5tp.PKG_SecondActivity.SecondActivity">
 
         <LinearLayout
+            android:layout_width="368dp"
+            android:layout_height="495dp"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/linearLayoutCompat"
+            tools:layout_editor_absoluteY="8dp"
+            tools:layout_editor_absoluteX="8dp">
+
+
+        <TextView
+            android:id="@+id/titulo"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:text="@string/registro_usuario"
+            android:textColor="#000"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
 
-        </LinearLayout>
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/subtitulo1"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textNombre"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingLeft="25dp"
-                android:text="@string/textNombre"
-                android:textColor="#000"/>
-
-            <EditText
-                android:id="@+id/editNombre"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:hint="@string/textNombre"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textApellido"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingLeft="25dp"
-                android:text="@string/textApellido"
-                android:textColor="#000"/>
-
-            <EditText
-                android:id="@+id/editApellido"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:hint="@string/textApellido"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textDNI"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingLeft="25dp"
-                android:text="@string/textDNI"
-                android:textColor="#000"/>
-
-            <EditText
-                android:id="@+id/editDNI"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:inputType="number"
-                android:hint="@string/textDNI"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textMail"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingLeft="25dp"
-                android:text="@string/textMail2"
-                android:textColor="#000"/>
-
-            <EditText
-                android:id="@+id/editMail"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:hint="@string/textMail2"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textClave"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingLeft="25dp"
-                android:text="@string/textClave2"
-                android:textColor="#000"/>
-
-            <EditText
-                android:id="@+id/editClave"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:inputType="textPassword"
-                android:hint="@string/textClave2"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textReIngrese"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center|left"
-                android:paddingLeft="25dp"
-                android:text="@string/textReingrese"
-                android:textColor="#000"/>
-
-            <EditText
-                android:id="@+id/editReingrese"
-                android:layout_width="220dp"
-                android:layout_height="match_parent"
-                android:inputType="textPassword"
-                android:hint="@string/edReingrese"/>
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnGuardar"
-            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/btnRegistrarme"/>
+            android:gravity="center"
+            android:text="Está es la pantalla de registro."
+            android:textColor="#000"
+            android:textSize="15dp"/>
+        <TextView
+            android:id="@+id/subtitulo2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Por favor ingrese datos verdaderos"
+            android:textColor="#000"
+            android:textSize="15dp"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
 
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
 
-</android.support.constraint.ConstraintLayout>
+                <TextView
+                    android:id="@+id/textNombre"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingLeft="25dp"
+                    android:text="@string/textNombre"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:id="@+id/editNombre"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:hint="@string/textNombre"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textApellido"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingLeft="25dp"
+                    android:text="@string/textApellido"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:id="@+id/editApellido"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:hint="@string/textApellido"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textDNI"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingLeft="25dp"
+                    android:text="@string/textDNI"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:id="@+id/editDNI"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:inputType="number"
+                    android:hint="@string/textDNI"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textMail"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingLeft="25dp"
+                    android:text="@string/textMail2"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:id="@+id/editMail"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:hint="@string/textMail2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textClave"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingLeft="25dp"
+                    android:text="@string/textClave2"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:id="@+id/editClave"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:hint="@string/textClave2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textReIngrese"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center|left"
+                    android:paddingLeft="25dp"
+                    android:text="@string/textReingrese"
+                    android:textColor="#000"/>
+
+                <EditText
+                    android:id="@+id/editReingrese"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:hint="@string/edReingrese"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnGuardar2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="#000"
+        app:rippleColor="#000"
+        android:layout_margin="6dp"
+        android:src="@android:drawable/ic_menu_save"/>
+
+</android.support.design.widget.CoordinatorLayout>
